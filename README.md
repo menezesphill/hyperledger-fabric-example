@@ -1,4 +1,4 @@
-# Goledger CC Tools Demo Chaincode 
+# Hyperledger Fabric Demo Chaincode 
 
 ## Directory Structure
 
