@@ -6,11 +6,11 @@ import (
 	"strings"
 	"time"
 
-	"github.com/goledgerdev/cc-tools-demo/chaincode/assettypes"
-	"github.com/goledgerdev/cc-tools-demo/chaincode/datatypes"
-	"github.com/goledgerdev/cc-tools-demo/chaincode/header"
 	"github.com/goledgerdev/cc-tools/assets"
 	tx "github.com/goledgerdev/cc-tools/transactions"
+	"github.com/goledgerdev/hyperledger-chaincode-demo/chaincode/assettypes"
+	"github.com/goledgerdev/hyperledger-chaincode-demo/chaincode/datatypes"
+	"github.com/goledgerdev/hyperledger-chaincode-demo/chaincode/header"
 
 	"github.com/hyperledger/fabric-chaincode-go/shim"
 	pb "github.com/hyperledger/fabric-protos-go/peer"

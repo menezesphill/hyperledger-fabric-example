@@ -1,3 +1,3 @@
-module github.com/goledgerdev/cc-tools-demo/test
+module github.com/goledgerdev/hyperledger-chaincode-demo/test
 
 go 1.16

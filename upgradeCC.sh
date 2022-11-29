@@ -53,7 +53,7 @@ curl -sS -k -X POST \
     -H 'magicnumber: dfff482c-1df5-42ad-95d4-d8d72b2398be' \
     -d "{
             \"channelName\": \"mainchannel\",
-            \"chaincode\": \"cc-tools-demo\",
+            \"chaincode\": \"hyperledger-chaincode-demo\",
             \"chaincodeVersion\": \"${version}\"
         }" > /dev/null
 
@@ -66,7 +66,7 @@ then
         -H 'Content-Type: application/json' \
         -d "{
                 \"channelName\": \"mainchannel\",
-                \"chaincode\": \"cc-tools-demo\",
+                \"chaincode\": \"hyperledger-chaincode-demo\",
                 \"chaincodeVersion\": \"${version}\"
             }" > /dev/null
 
@@ -101,7 +101,7 @@ then
         -H 'Content-Type: application/json' \
         -d "{
                 \"channelName\": \"mainchannel\",
-                \"chaincode\": \"cc-tools-demo\",
+                \"chaincode\": \"hyperledger-chaincode-demo\",
                 \"chaincodeVersion\": \"${version}\"
             }" > /dev/null
 
@@ -134,7 +134,7 @@ curl -k -X POST \
     -H 'Content-Type: application/json' \
     -d "{
             \"channelName\": \"mainchannel\",
-            \"chaincode\": \"cc-tools-demo\",
+            \"chaincode\": \"hyperledger-chaincode-demo\",
             \"chaincodeVersion\": \"${version}\",
             \"chaincodeType\": \"golang\",
             \"endorsement\": {

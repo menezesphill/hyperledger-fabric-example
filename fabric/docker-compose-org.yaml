@@ -10,7 +10,7 @@ volumes:
   peer0.org.example.com:
 
 networks:
-  cc-tools-demo-net:
+  hyperledger-chaincode-demo-net:
     external: true
 
 services:
@@ -20,7 +20,7 @@ services:
       service: orderer0.org.example.com
     container_name: orderer0.org.example.com
     networks:
-      - cc-tools-demo-net
+      - hyperledger-chaincode-demo-net
 
   peer0.org.example.com:
     container_name: peer0.org.example.com
@@ -36,7 +36,7 @@ services:
       options:
         max-size: 50m  
     networks:
-      - cc-tools-demo-net
+      - hyperledger-chaincode-demo-net
 
   couch.peer0.org.example.com:
     container_name: couch.peer0.org.example.com
@@ -50,7 +50,7 @@ services:
       options:
         max-size: "200k"
     networks:
-      - cc-tools-demo-net
+      - hyperledger-chaincode-demo-net
 
   api.org.example.com:
     container_name: api.org.example.com
@@ -71,9 +71,9 @@ services:
       - ./configsdk-org.yaml:/rest-server/configsdk.yaml
       - ./channel-artifacts/channel.tx:/rest-server/channel.tx
       - ./channel-artifacts/orgMSPanchors.tx:/rest-server/anchors.tx
-      - ../chaincode:/go/src/github.com/goledgerdev/cc-tools-demo/chaincode
+      - ../chaincode:/go/src/github.com/goledgerdev/hyperledger-chaincode-demo/chaincode
     networks:
-      - cc-tools-demo-net
+      - hyperledger-chaincode-demo-net
     ports:
       - 3000:3000
 
@@ -105,4 +105,4 @@ services:
       - ./channel-artifacts:/opt/gopath/src/github.com/hyperledger/fabric/peer/channel-artifacts
       - ./addorg-artifacts:/opt/gopath/src/github.com/hyperledger/fabric/peer/addorg-artifacts
     networks:
-      - cc-tools-demo-net
+      - hyperledger-chaincode-demo-net
