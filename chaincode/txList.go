@@ -12,4 +12,5 @@ var txList = []tx.Transaction{
 	tx.DeleteAsset,
 	txdefs.RequestTransfer,
 	txdefs.AuthorizeTransfer,
+	txdefs.GetCarByOwner,
 }
