@@ -13,4 +13,6 @@ var txList = []tx.Transaction{
 	txdefs.RequestTransfer,
 	txdefs.AuthorizeTransfer,
 	txdefs.GetCarByOwner,
+	txdefs.IsCertReceptor,
+	txdefs.AcceptTransfer,
 }

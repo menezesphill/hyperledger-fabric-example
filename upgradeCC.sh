@@ -22,7 +22,7 @@ if [ $version = '0' ]
 then
     printf 'Usage: ./upgradeCC.sh <version>\n'
     printf 'Flags:\n'
-    printf '    -n   Quantity of organizations (Min: 1, Max: 3, Default: 3)\n'
+    printf '    -n   You must provide a Chaincode Version (Starting from v0.1)\n'
     exit
 fi
 

@@ -9,12 +9,12 @@ import (
 	tx "github.com/goledgerdev/cc-tools/transactions"
 )
 
-var AuthorizeTransfer = tx.Transaction{
-	Tag:         "authorizeTransfer",
-	Label:       "Authorize Transfer",
-	Description: "Authorize a transfer of an asset",
+var AcceptTransfer = tx.Transaction{
+	Tag:         "acceptTransfer",
+	Label:       "Accept Transfer",
+	Description: "Accept a transfer of an asset",
 	Method:      "PUT",
-	Callers:     []string{`$org2MSP`, "orgMSP"},
+	Callers:     []string{`$org1MSP`, "orgMSP"},
 
 	Args: []tx.Argument{
 		{
@@ -39,17 +39,11 @@ var AuthorizeTransfer = tx.Transaction{
 		carMap := (map[string]interface{})(*carAsset)
 
 		// Check if the transfer is authorized
-		if carMap["transfer"].(string) != "accepted" {
-			return nil, errors.WrapError(nil, "Transfer is not accepted")
+		if carMap["transfer"].(string) != "requested" {
+			return nil, errors.WrapError(nil, "Transfer is not requested")
 		}
 
-		updatedOwnerKey := make(map[string]interface{})
-		updatedOwnerKey["@assetType"] = "person"
-		updatedOwnerKey["@key"] = carMap["transferTo"].(map[string]interface{})["@key"]
-
-		carMap["owner"] = updatedOwnerKey
-		carMap["transfer"] = "completed"
-		carMap["transferTo"] = nil
+		carMap["transfer"] = "accepted"
 
 		carMap, err = carAsset.Update(stub, carMap)
 		if err != nil {

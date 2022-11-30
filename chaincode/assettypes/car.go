@@ -19,11 +19,9 @@ var Car = assets.AssetType{
 			Writers:  []string{`org2MSP`, "orgMSP"}, // This means only org2 can create the asset (others can edit)
 		},
 		{
-			IsKey:    true,
 			Tag:      "owner",
 			Label:    "Owner",
 			DataType: "->person",
-			Writers:  []string{`org2MSP`, "orgMSP"}, // This means only org2 can create the asset (others can edit)
 		},
 		{
 			Tag:      "transfer",
